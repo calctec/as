@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+  <script src=""></script>
+</head>
+  <body>
+    <style>
+      /* 
+   quotes css
+ */
+ 
+    /* Set the container to a flexbox layout */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    /* Style the flex items */
+    .flex-item {
+      background-color: #f1f1f1;
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+      flex: 1 0 22%;
+    }
+    .flex-container  :hover {
+	background: radial-gradient(circle, #c04848, #480048);
+	color: #fff;
+}
+    /* Responsive styles for different screen sizes */
+    @media only screen and (max-width: 768px) {
+      .flex-item {
+        flex-basis: 45%;
+      }
+    }
+    
+    @media only screen and (max-width: 480px) {
+      .flex-item {
+        flex-basis: 100%;
+      }
+    }
+   
+    /* 
+    image gallery css
+    */
+    
+    .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(1) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s linear;
+  }
+  .column img:hover {
+    filter: grayscale(0);
+  }
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+    .column img {
+      filter: grayscale(0) brightness(1);
+    }
+  }
+/* 
+end
+ */
+
+
+    </style>
+    <br>
+    <hr class="featurette-divider">
+    <br>
+    
+    <!-- 
+      carousel
+     -->
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="height: 450px;">
+            <img src="https://home.uark.edu/files/2020/02/Time-Management-grpahic-correct-size-1280x640.png" class=" w-100" style="height: 450px;" alt="...">
+          </div>
+          <div class="carousel-item" style="height: 450px;">
+            <img src="https://www.tata.com/content/dam/tata/images/newsroom/business/desktop/aiisforreal_banner_desktop_1920x1080.jpg" class=" w-100" style="height: 450px;" alt="...">
+          </div>
+          <div class="carousel-item" style="height: 450px;">
+            <img src="https://www.scientiaconsulting.eu/hubfs/17321%208%20digital%20banking%20features%20that%20make%20customers%20financial%20lives%20easier.jpeg" class=" w-100" style="height: 450px;" alt="...">
+          </div>
+          
+          <div class="carousel-item" style="height: 450px;">
+            <img src="https://img.freepik.com/free-vector/banner-policies-rules-agreement_107791-3232.jpg?w=2000" class=" w-100" style="height: 450px;" alt="...">
+          </div>
+         
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+     
+      <!-- 
+      carousel/
+     -->
+
+
+     <!-- 
+         quotes
+      -->
+      <hr class="featurette-divider">
+      <div class="flex-container">
+        <div class="flex-item">
+          <h2>"Business need to go beyond the interest of their companies to the communities they serve."</h2>
+          <p>- Ratan Tata</p>
+        </div>
+        <div class="flex-item">
+          <h2>"None of is as smart as all of us."</h2>
+          <p>- Ken Blanchard</p>
+         </div>
+        <div class="flex-item">
+          <h2>"Sucess is best when it's shared."</h2>
+          <p>- Howard Schultz</p>
+        </div>
+        <div class="flex-item">
+          <h2>"Scale is important for a startup. Think big, but take one day at a time"</h2>
+          <p>-Kunal Bahl</p>
+        </div>
+      </div>
+
+    <!-- 
+         quotes
+      -->
+
+      
+      <!--
+        image gallery
+      -->
+    
+      <hr class="featurette-divider">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="column">
+            <img src="https://www.niagarainstitute.com/hubfs/Boost%20Your%20Leadership%20Communication%20Skills%20At%20Meetings%20In%20X%20Minutes.png" />
+            <img src="https://innovecs.com/wp-content/uploads/2020/11/building-software-development-teams.jpg" />
+            <img src="https://www.qceventplanning.com/blog/wp-content/uploads/2022/09/What-is-corporate-event-planning-Feature-Image.jpg" />
+            <img src="https://www.commercialdesignindia.com/cloud/2022/07/12/Smart-Office-audience.jpg" />
+            <img src="https://kochiva.com/wp-content/uploads/2022/03/Banner-career.png" />
+          </div>
+          <div class="column">
+            <img src="https://media.istockphoto.com/id/1328313970/photo/multi-ethnic-group-of-business-persons-during-a-conference.jpg?s=612x612&w=0&k=20&c=mWSk9ctsxJxa0CVdm66kkdsggz4dknCitGPpws0cCm8=">
+            <img src="https://cdn.pixabay.com/photo/2015/07/17/22/42/whiteboard-849803__340.jpg">
+            <img src="https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090__340.jpg">
+            <img src="https://cdn.pixabay.com/photo/2016/08/16/09/53/international-conference-1597531__340.jpg">
+          
+          </div>
+          <div class="column">
+            <img src="https://www.ecali-club.gr/sites/ekali/files/slider/1920x1280_corporate_parties_0.jpg" />
+            <img src="https://image.cnbcfm.com/api/v1/image/107032274-1647540069295-gettyimages-1084167640-2018_10_13-n1_office_0312.jpeg?v=1647540545&w=1920&h=1080" />
+            <img src="https://media.istockphoto.com/id/1314080931/photo/video-call-online-conference-over-shoulder-view-of-african-american-man-at-computer-screen.jpg?b=1&s=170667a&w=0&k=20&c=Bbra8oFzuT72C2Rj-lbEF_kNCXPbPqjDWbqsc0Lq93E=">
+            <img src="https://www.mtievents.com/wp-content/uploads/2021/01/pexels-anna-shvets-4226140.jpg"/>
+            <img src="https://blog.pinkelephant.com/images/uploads/_container-width/17-IT-Management-Certifications-for-IT-Leaders.png">
+          </div>
+        </div>
+      </div>
+     
+      <hr class="featurette-divider">
+     
+      <!--
+        image gallery/
+      -->
+  
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+   
+
+
+
+
+

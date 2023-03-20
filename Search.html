@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get User Data</title>
+
+</head>
+<body>
+  <style>
+    .userDataDiv{
+/* height: 100vh;
+width:100%;
+border:1;
+border-style: solid;
+justify-content: center;
+display: flex; */
+
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: larger;
+}
+.userDataDiv table tr{
+    border: 2;
+    border-style: solid;
+}
+
+  </style>
+
+	<form id="user-form">
+		<label for="user-id">Enter user ID:</label>
+		<input type="text" id="username" name="username">
+		<button type="submit">Get User Data</button>
+	</form>
+
+	<div id="userDataDiv" class="userDataDiv">
+		<p>Personal Info</p>
+	</div>
+  <!-- <p id="userDataDiv"></p> -->
+  <!-- <p id="userelse"></p>  -->
+	<div id="userelse"></div>
+
+
+	<script>
+
+		const form = document.getElementById("user-form");
+		const userDataDiv = document.getElementById("user-data");
+
+		form.addEventListener("submit", (event) => {
+			event.preventDefault();
+
+			// const userId = document.getElementById("username").value;
+      const username = document.getElementById("username").value;
+
+			fetch("https://sheetdb.io/api/v1/gf12qdsjpqojt/search?username=" + username)
+				.then(response => response.json())
+				.then(data => {
+					if (data.length > 0) {
+						const user = data[0];
+						// Get the user data div element
+// Get the user data div element
+const userDataDiv = document.getElementById("userDataDiv");
+
+// Create the HTML code for the table using the user data
+const tableHtml = `
+  <table>
+     <tr>
+		<td>Personal Information</td><td>&nbsp;</td>
+    </tr>
+      <td>Name</td>
+      <td>${user.name}</td>
+    </tr>
+    <tr>
+      <td>Mobile</td>
+      <td>${user.mobile}</td>
+    </tr>
+    <tr>
+      <td>Father Name</td>
+      <td>${user.fathername}</td>
+    </tr>
+    <tr>
+      <td>Mother Name</td>
+      <td>${user.mothername}</td>
+    </tr>
+    <tr>
+      <td>Mail</td>
+      <td>${user.mail}</td>
+    </tr>
+    <tr>
+      <td>Pan No</td>
+      <td>${user.pan}</td>
+    </tr>
+    <tr>
+      <td>Aadhar No</td>
+      <td>${user.aadhar}</td>
+    </tr>
+    <tr>
+      <td>Date of birth</td>
+      <td>${user.dob}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>${user.address}</td>
+    </tr>
+	<tr>
+		<td>Professional Information</td><td>&nbsp;</td>
+    </tr>
+		<tr>
+      <td>Employee Id</td>
+      <td>${user.empid}</td>
+    </tr>
+	<tr>
+      <td>Official Mail</td>
+      <td>${user.officemail}</td>
+    </tr>
+	<tr>
+      <td>Designation</td>
+      <td>${user.designation}</td>
+    </tr>
+	<tr>
+      <td>Date of join</td>
+      <td>${user.Doj}</td>
+    </tr>
+	<tr>
+		<td>Emergency Contact</td><td>&nbsp;</td>
+    </tr>
+		<tr>
+      <td>Name</td>
+      <td>${user.ename}</td>
+    </tr>
+	<tr>
+      <td>Relation</td>
+      <td>${user.Relation}</td>
+    </tr>
+	<tr>
+      <td>Mobile No</td>
+      <td>${user.poimobile}</td>
+    </tr>
+  </table>
+`;
+
+// Set the innerHTML of the user data div element to the table HTML code
+userDataDiv.innerHTML = tableHtml;
+
+// userDataDiv.appendChild(table);
+
+					} else {
+						userelse.innerHTML = "User not found.";
+					}
+				})
+				.catch(error => {
+					console.error(error);
+					userDataDiv.innerHTML = "Error occurred while fetching user data.";
+				});
+		});
+
+	</script>
+
+</body>
+</html>
